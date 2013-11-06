@@ -6,18 +6,18 @@ describe "java" do
   it do
     should include_class('boxen::config')
 
-    should contain_package('jre-7u45.dmg').with({
+    should contain_package('jre.dmg').with({
       :ensure   => 'present',
       :alias    => 'java-jre',
       :provider => 'pkgdmg',
-      :source   => 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jre-7u45-macosx-x64.dmg'
+      :source   => '/test/boxen/repo/.tmp/jre.dmg'
     })
 
-    should contain_package('jdk-7u45.dmg').with({
+    should contain_package('jdk.dmg').with({
       :ensure   => 'present',
       :alias    => 'java',
       :provider => 'pkgdmg',
-      :source   => 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-macosx-x64.dmg'
+      :source   => '/test/boxen/repo/.tmp/jdk.dmg'
     })
 
     should contain_file('/test/boxen/bin/java').with({
