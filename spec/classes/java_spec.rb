@@ -10,14 +10,14 @@ describe "java" do
       :ensure   => 'present',
       :alias    => 'java-jre',
       :provider => 'pkgdmg',
-      :source   => 'https://s3.amazonaws.com/boxen-downloads/java/jre-7u45-macosx-x64.dmg'
+      :source   => 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jre-7u45-macosx-x64.dmg'
     })
 
     should contain_package('jdk-7u45.dmg').with({
       :ensure   => 'present',
       :alias    => 'java',
       :provider => 'pkgdmg',
-      :source   => 'https://s3.amazonaws.com/boxen-downloads/java/jdk-7u45-macosx-x64.dmg'
+      :source   => 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-macosx-x64.dmg'
     })
 
     should contain_file('/test/boxen/bin/java').with({
